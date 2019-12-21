@@ -1,0 +1,13 @@
+w0 = 2*pi/3;
+r = 0.6;
+[b,a]=notch(w0,r);
+n = [0:0.1:10]';
+X1 = sin(w0*n)+sin(2*w0*n);
+%X2 = sin(2*w0*n);
+y1 = filter(a,b,X1);
+%y2 = filter(a,b,X2);
+subplot(211);
+plot(n,X1);
+title("Original signal
+subplot(212);
+plot(n,y1);

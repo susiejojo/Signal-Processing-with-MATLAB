@@ -1,0 +1,14 @@
+N = 10;
+x = rand(600,1)';
+h = ones(4,1)';
+%y = overlapsave(h,x,N);
+z = overlapadd(h,x,N);
+subplot(2,1,1);
+plot(1:length(z),z);
+subplot(2,1,2);
+plot(1:(length(x)+length(h)-1),conv(x,h));
+subplot(2,2,3);
+plot(1:length(z),z);
+hold on;
+plot(1:(length(x)+length(h)-1),conv(x,h));
+% legend("Using filtering","Normal convolution");

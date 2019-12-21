@@ -1,0 +1,15 @@
+N = 10;
+x = rand(100,1)';
+h = ones(4,1)';
+y = overlapadd(h,x,N);
+subplot(2,2,1);
+plot(1:90,y(1:90));
+title("Convolution through fft");
+subplot(2,2,2);
+exp = conv(x,h);
+plot(1:90,exp(1:90));
+title("Convolution through inbuilt function");
+subplot(2,2,3);
+diff = conv(x,h) - y;
+plot(1:90,diff(1:90));
+title("Error");

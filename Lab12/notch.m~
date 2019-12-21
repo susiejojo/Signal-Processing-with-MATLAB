@@ -1,0 +1,10 @@
+function [b,a] = notch(w0,r)
+% Compute denominator polynomial from r and w0
+a = [1 -2*cos(w0) 1];
+% Compute numerator polynomial from w0
+b = [1 -2*r*cos(wo) r^2];
+% Determine gain so that frequency response has magnitude 1 at w0
+b = b*z;
+% Diagnostic display
+freqz(b,a);
+end
